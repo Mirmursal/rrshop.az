@@ -1,0 +1,184 @@
+@import "header";
+@import "footer";
+@import "variable";
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    #mainSlider {
+        margin-bottom: 25px;
+        .container {
+            position: relative; // padding: 0;
+            .row {
+                border-right: 0.5px solid black;
+                border-left: 0.5px solid black;
+                .owl-carousel {
+                    // owl css editing begin
+                    .owl-dots {
+                        margin-top: -35px;
+                        position: absolute;
+                        left: 50%;
+                    } // owl css editing end
+                }
+            }
+            .owlMyNav {
+                width: 100%;
+                position: absolute;
+                padding-right: 7px;
+                padding-left: 7px;
+                top: 50%;
+                left: 50%;
+                height: 35px;
+                transform: translateX(-50%);
+                z-index: 12;
+                div {
+                    width: 35px;
+                    height: 100%;
+                    background-color: $mainColor;
+                    padding: 7px 11px;
+                    cursor: pointer;
+                    i {
+                        font-size: 22px;
+                        color: white;
+                    }
+                }
+            }
+        }
+    } // content begin
+    // top content best seller begin
+    #top-Content {
+        .container {
+            .row {
+                &:after {
+                    clear: both;
+                    content: "";
+                }
+                .col-xs-12 {
+                    h2.page-heading {
+                        font-size: 16px;
+                        font-weight: bold;
+                        height: 41px;
+                        border-bottom: 1px solid #eaeaea;
+                        line-height: 40px;
+                        position: relative;
+                        span {
+                            border-bottom: 3px solid $mainColor;
+                            position: absolute;
+                            bottom: -1px;
+                            padding: 0 12px;
+                        }
+                    }
+                    .latest-deals-product {
+                        margin-top: 20px;
+                        position: relative;
+                        ul.myCarousel {
+                            li.item {
+                                list-style: none;
+                                width: 226px;
+                                margin-right: 10px;
+                                overflow: hidden;
+                                padding-bottom: 5px;
+                                &:hover{
+                                    border:1px solid $mainColor;
+                                    .left-block {
+                                        .imgg{
+                                            transform: scale(1.2) translate(-20px,30px)
+                                        }
+                                    }
+
+                                    .add-to-cart{
+                                        top: 205px !important;
+
+                                    }
+                                }
+                                .left-block {
+                                    position: relative;
+                                    overflow: hidden;
+                                    padding: 10px 10px 0;
+                                    a {
+                                        height: 250px;
+                                        display: block;
+                                        overflow: hidden;
+                                        color: #666;
+                                        text-decoration: none;
+                                        outline: none !important;
+                                        transition: all 0.3s linear;
+                                        img {
+                                            width: auto;
+                                            height: 100%;
+                                            transition: all 0.5s;
+                                            transform: scale(1, 1);
+                                            margin: 0 auto;
+                                            transform-style: preserve-3d;
+                                            max-width: 100%;
+                                        }
+                                    }
+                                    div.add-to-cart {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 262px;
+                                        transition:0.3s all ease;
+                                        right: 0;
+                                        bottom: -50px;
+                                        width: 100%;
+                                        background-color: rgba(0, 0, 0, 0.4);
+                                        color: #fff;
+                                        text-align: center;
+                                        line-height: 50px;
+                                        a {
+                                            background: url("http://rrshop.az/assets/images/icon-cart-option2.png") no-repeat left center;
+                                            height: 32px;
+                                            line-height: 32px;
+                                            color: #fff;
+                                            width: auto;
+                                            padding-left: 40px;
+                                            display: inline-block;
+                                            vertical-align: middle;
+                                            overflow: hidden;
+                                            text-decoration: none;
+                                            outline: none !important;
+                                        }
+                                    }
+                                }
+                                .right-block {
+                                    padding: 0 15px;
+                                    margin-top: 15px;
+                                    h5.product-name {
+                                        padding-bottom: 5px;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        display: -webkit-box;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-line-clamp: 2;
+                                        line-height: 2;
+                                        max-height: 55px;
+                                        min-height: 55px;
+                                        font-size: 14px;
+                                        a {
+                                            color: #666;
+                                            text-decoration: none;
+                                            outline: none !important;
+                                        }
+                                    }
+                                    div.content_price {
+                                        background: transparent;
+                                        font-weight: inherit;
+                                        margin: 0;
+                                        padding: 0;
+                                        border: 0;
+                                        outline: 0;
+                                        vertical-align: top;
+                                        span.product-price {
+                                            font-size: 18px;
+                                            color: $mainColor;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } //top content best seller end
+    // content end
+}

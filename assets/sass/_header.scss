@@ -1,0 +1,305 @@
+@import "variable";
+#header {
+    font-weight: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: top;
+    background: transparent;
+    .top-header {
+        background: #eee;
+        font-size: 13px;
+        .container {
+            .language {
+                width: auto;
+                display: inline-block;
+                line-height: 34px;
+                .dropdown {
+                    width: auto;
+                    display: inline-block;
+                    position: relative;
+                    line-height: 34px;
+                    a {
+                        text-decoration: none;
+                        outline: none !important;
+                        color: #666;
+                    }
+                    a.current-open {
+                        border-right: 1px solid #e0e0e0;
+                        padding-right: 10px;
+                        margin-left: 10px;
+                        &:hover {
+                            color: $mainColor;
+                            transition: all ease 0.2s;
+                        }
+                        &:after {
+                            content: "\f107";
+                            font-family: "FontAwesome";
+                            font-size: 17px;
+                            vertical-align: 0;
+                            padding-left: 15px;
+                            font-weight: bold;
+                        }
+                        img {
+                            margin-top: -5px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            max-width: 100%;
+                            margin-right: 5px;
+                        }
+                    }
+                    ul.dropdown-menu {
+                        opacity: 1;
+                        z-index: 2;
+                        border-top: 2px solid #f96d10;
+                        top: 8px;
+                        position: absolute;
+                        li {
+                            display: list-item;
+                            font-size: 14px;
+                            list-style: none;
+                            a {
+                                border: none;
+                                margin: 0;
+                                padding: 5px 10px;
+                                display: block;
+                                clear: both;
+                                font-weight: 400;
+                                line-height: 1.42857143;
+                                color: #333;
+                                white-space: nowrap;
+                                text-decoration: none;
+                                outline: none !important;
+                                img {
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    margin-top: -5px;
+                                    margin-right: 5px;
+                                    max-width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .top-bar-social {
+                display: inline-block;
+                width: auto;
+                display: inline-block;
+                line-height: 34px;
+                a {
+                    border: none;
+                    padding: 0;
+                    color: #999;
+                    font-size: 14px;
+                    margin-left: 10px;
+                    text-decoration: none;
+                    outline: none !important;
+                    &:hover {
+                        color: $mainColor;
+                        transition: all ease 0.2s;
+                    }
+                }
+            }
+            .support-link {
+                float: right;
+                width: auto;
+                line-height: 34px;
+                a {
+                    border-right: 1px solid #e0e0e0;
+                    padding-right: 10px;
+                    margin-left: 10px;
+                    text-decoration: none;
+                    outline: none !important;
+                    color: #666;
+                    &:hover {
+                        color: $mainColor;
+                        transition: all ease 0.2s;
+                    }
+                }
+            }
+        }
+    }
+    .main-header {
+        padding: 20px 0 30px 0;
+        .row {
+            div.header-search-box {
+                padding: 0 15px;
+                margin-top: 17px;
+                float: left;
+                position: relative;
+                min-height: 1px;
+                form {
+                    height: 41px;
+                    border: 1px solid #eaeaea;
+                    position: relative;
+                    .form-group {
+                        padding-top: 9px;
+                        width: calc(100% - 200px);
+                        display: inline-block;
+                        margin-bottom: 0;
+                        vertical-align: middle;
+                        input {
+                            border: none;
+                            padding-left: 15px;
+                            padding-bottom: 8px;
+                            width: 100%;
+                            outline: none;
+                            background: transparent;
+                        }
+                    }
+                    button.btn-search {
+                        background: none;
+                        border-left: 1px solid #eaeaea;
+                        color: #f96d10;
+                        font-size: 16px;
+                        width: 41px;
+                        height: 41px;
+                        border: none;
+                        border-left: 1px solid #eaeaea;
+                        border-radius: 0;
+                        font-weight: bold;
+                        position: absolute;
+                        top: -1px;
+                        right: -1px;
+                        outline: none;
+                        i {
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            text-indent: 0px;
+                            text-shadow: none;
+                        }
+                    }
+                }
+            }
+            div.logo {
+                text-align: center;
+                position: relative;
+                min-height: 1px;
+                padding-right: 15px;
+                padding-left: 15px;
+                a {
+                    text-decoration: none;
+                    outline: none !important;
+                    color: #666;
+                    img {
+                        vertical-align: top;
+                        max-width: 100%;
+                    }
+                }
+            }
+            div.group-button-header {
+                margin-top: 22px;
+                position: relative;
+                min-height: 1px;
+                padding-right: 15px;
+                padding-left: 15px;
+                float: left;
+                a {
+                    color: #666;
+                    float: right;
+                    text-decoration: none;
+                    outline: none !important;
+                    h2 {
+                        font-size: 25px;
+                        line-height: 1.1;
+                    }
+                    &:hover {
+                        color: $mainColor;
+                        transition: all ease 0.2s;
+                    }
+                }
+            }
+        }
+    }
+    #nav-top-menu {
+        background: #eee;
+        .container {
+            .row {
+                background: #f96d10;
+                #main-menu {
+                    width: 100%;
+                    // padding: 0 15px;
+                    margin: 0;
+                    margin-top: -1px;
+                    padding: 0;
+                    &:after {
+                        clear: both;
+                    }
+                    .navbar-default {
+                        border-radius: 0;
+                        border: none;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                        min-height: 50px;
+                        .container-fluid {
+                            padding:0;
+                        .navbar{
+                            padding: 0;
+                            .navbar-nav{
+                                width: 100%;
+                                line-height: 35px;
+                                li{
+                                    margin-right: 1.2%;
+                                    &:hover{
+                                        background: #e80000;
+                                        .dropdown-menu{
+                                            animation-name: dropdownAnimation;
+                                            animation-duration: 0.8s;
+                                            display: block;
+                                        }
+                                    }
+                                  
+                                    .dropdown-toggle{
+                                        color: white;
+                                        position: relative;
+                                         &:after{
+                                             display: none;
+                                       }
+                                       &:before{
+                                        position: absolute;
+                                        content: "\f0dd";
+                                        font-family: "FontAwesome";
+                                        color: white;
+                                        bottom: -6px;
+                                        left: 50%;
+                                  }
+                                    }
+                                }
+                            }
+                        }
+                        }
+                    }
+                }
+            }
+            #form-search-opntop {}
+        }
+    }
+}
+
+
+
+@keyframes dropdownAnimation{
+    0%{
+        margin-top: 25%;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 0%;
+        opacity: 1;
+    }
+
+}
+
+// media rule
+
+@media screen and (max-width: 1024px) {
+    .group-button-header{
+        display: none;
+    }
+    a.hidden-xs{
+        display: none;
+    }
+}
