@@ -1,0 +1,53 @@
+form {
+    .contact-form-box {
+        div.form-selector {
+            label {}
+            input {
+                color: #555;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                outline: none;
+                height: 30px;
+                padding: 5px 10px;
+                font-size: 12px;
+                line-height: 1.5;
+                border-radius: 3px;
+                &:active {
+                    outline: none;
+                }
+            }
+            .form-selector {
+                label {
+                    span {
+                        color: coral;
+                    }
+                }
+                input {
+                    color: #555;
+                    background-color: #fff;
+                    background-image: none;
+                    border: 1px solid #ccc;
+                    outline: none;
+                    height: 30px;
+                    padding: 5px 10px;
+                    font-size: 12px;
+                    line-height: 1.5;
+                    border-radius: 3px;
+                    &:active {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// media begin
+@media only screen and (max-width: 600px) {
+    .columns-container{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}

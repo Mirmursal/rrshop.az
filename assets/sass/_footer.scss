@@ -1,0 +1,138 @@
+#footer {
+    margin-top: 60px;
+    background: #eaeaea;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    // position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    .container {
+        #introduce-box {
+            margin-top: 40px;
+            .col-md-3 {
+                #address-box {
+                    a {
+                        color: #666;
+                        text-decoration: none;
+                        outline: none !important;
+                        img {
+                            vertical-align: top;
+                            max-width: 100%;
+                        }
+                    }
+                    div#address-list {
+                        margin-top: 18px;
+                        div.tit-name {
+                            float: left;
+                            font-weight: bold;
+                            width: 70px;
+                            padding-right: 5px;
+                        }
+                        div.tit-contain {
+                            display: flex;
+                        }
+                    }
+                }
+                #contact-box {
+                    div.introduce-title {
+                        text-transform: uppercase;
+                        font-size: 16px;
+                        list-style: none;
+                        font-weight: bold;
+                        margin-bottom: 8px;
+                    }
+                    div.social-link {
+                        a {
+                            text-decoration: none;
+                            outline: none !important;
+                            color: #666;
+                            i {
+                                width: 30px;
+                                height: 30px;
+                                color: #fff;
+                                line-height: 30px;
+                                text-align: center;
+                                background: #cb222a;
+                                &:hover {
+                                    background: #ca585d;
+                                    transition: all ease 0.1s;
+                                }
+                            }
+                            i.fa-facebook {
+                                background: #415a99;
+                                &:hover {
+                                    background: #6677a5;
+                                    transition: all ease 0.1s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .col-md-6 {
+                div.introduce-title {
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    list-style: none;
+                    font-weight: bold;
+                    margin-bottom: 8px;
+                }
+                ul#introduce-company {
+                    padding-left: 16px;
+                    li {
+                        padding-top: 2px;
+                        padding-bottom: 2px;
+                        list-style: none;
+                        a {
+                            text-decoration: none;
+                            outline: none !important;
+                            color: #666;
+                        }
+                    }
+                }
+            }
+        }
+        #trademark-text-box {
+            font-size: 13px;
+            .col-sm-12 {
+                ul {
+                    margin-top: 0;
+                    margin-bottom: 1rem;
+                    li.trademark-text-tit {
+                        border-right: none;
+                        padding-right: 0;
+                        padding-left: 0;
+                        text-transform: uppercase;
+                        font-size: 13px;
+                        font-weight: bold;
+                    }
+                    li {
+                        display: inline;
+                        padding: 0 7px 0 5px;
+                        border-right: 1px solid #666666;
+                        a {
+                            text-decoration: none;
+                            outline: none !important;
+                            color: #666;
+                        }
+                    }
+                }
+            }
+        }
+        #footer-menu-box {
+            border-top: 1px solid #E1E1E1;
+            margin-top: 10px;
+            padding-top: 20px;
+            margin-bottom: 20px;
+            p {
+                a {
+                    text-decoration: none;
+                    outline: none !important;
+                    color: #666;
+                }
+            }
+        }
+    }
+}

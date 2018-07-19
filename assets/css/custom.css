@@ -28,7 +28,7 @@
           margin-left: 10px; }
           #header .top-header .container .language .dropdown a.current-open:hover {
             color: #f96d10;
-            transition: all ease 0.2s; }
+            transition: all ease 0.1s; }
           #header .top-header .container .language .dropdown a.current-open:after {
             content: "\f107";
             font-family: "FontAwesome";
@@ -235,6 +235,432 @@
 
   a.hidden-xs {
     display: none; } }
+#footer {
+  margin-top: 60px;
+  background: #eaeaea;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center; }
+  #footer .container #introduce-box {
+    margin-top: 40px; }
+    #footer .container #introduce-box .col-md-3 #address-box a {
+      color: #666;
+      text-decoration: none;
+      outline: none !important; }
+      #footer .container #introduce-box .col-md-3 #address-box a img {
+        vertical-align: top;
+        max-width: 100%; }
+    #footer .container #introduce-box .col-md-3 #address-box div#address-list {
+      margin-top: 18px; }
+      #footer .container #introduce-box .col-md-3 #address-box div#address-list div.tit-name {
+        float: left;
+        font-weight: bold;
+        width: 70px;
+        padding-right: 5px; }
+      #footer .container #introduce-box .col-md-3 #address-box div#address-list div.tit-contain {
+        display: flex; }
+    #footer .container #introduce-box .col-md-3 #contact-box div.introduce-title {
+      text-transform: uppercase;
+      font-size: 16px;
+      list-style: none;
+      font-weight: bold;
+      margin-bottom: 8px; }
+    #footer .container #introduce-box .col-md-3 #contact-box div.social-link a {
+      text-decoration: none;
+      outline: none !important;
+      color: #666; }
+      #footer .container #introduce-box .col-md-3 #contact-box div.social-link a i {
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        line-height: 30px;
+        text-align: center;
+        background: #cb222a; }
+        #footer .container #introduce-box .col-md-3 #contact-box div.social-link a i:hover {
+          background: #ca585d;
+          transition: all ease 0.1s; }
+      #footer .container #introduce-box .col-md-3 #contact-box div.social-link a i.fa-facebook {
+        background: #415a99; }
+        #footer .container #introduce-box .col-md-3 #contact-box div.social-link a i.fa-facebook:hover {
+          background: #6677a5;
+          transition: all ease 0.1s; }
+    #footer .container #introduce-box .col-md-6 div.introduce-title {
+      text-transform: uppercase;
+      font-size: 16px;
+      list-style: none;
+      font-weight: bold;
+      margin-bottom: 8px; }
+    #footer .container #introduce-box .col-md-6 ul#introduce-company {
+      padding-left: 16px; }
+      #footer .container #introduce-box .col-md-6 ul#introduce-company li {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        list-style: none; }
+        #footer .container #introduce-box .col-md-6 ul#introduce-company li a {
+          text-decoration: none;
+          outline: none !important;
+          color: #666; }
+  #footer .container #trademark-text-box {
+    font-size: 13px; }
+    #footer .container #trademark-text-box .col-sm-12 ul {
+      margin-top: 0;
+      margin-bottom: 1rem; }
+      #footer .container #trademark-text-box .col-sm-12 ul li.trademark-text-tit {
+        border-right: none;
+        padding-right: 0;
+        padding-left: 0;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: bold; }
+      #footer .container #trademark-text-box .col-sm-12 ul li {
+        display: inline;
+        padding: 0 7px 0 5px;
+        border-right: 1px solid #666666; }
+        #footer .container #trademark-text-box .col-sm-12 ul li a {
+          text-decoration: none;
+          outline: none !important;
+          color: #666; }
+  #footer .container #footer-menu-box {
+    border-top: 1px solid #E1E1E1;
+    margin-top: 10px;
+    padding-top: 20px;
+    margin-bottom: 20px; }
+    #footer .container #footer-menu-box p a {
+      text-decoration: none;
+      outline: none !important;
+      color: #666; }
+
+.columns-container #columns {
+  padding-top: 16px;
+  padding-bottom: 30px;
+  padding-left: 0;
+  padding-right: 0; }
+  .columns-container #columns h2.page-heading {
+    height: 41px;
+    border-bottom: 1px solid #eaeaea;
+    line-height: 40px;
+    position: relative;
+    font-size: 16px;
+    font-weight: bold; }
+  .columns-container #columns p {
+    font-size: 14px; }
+
+form .contact-form-box div.form-selector input {
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  outline: none;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px; }
+  form .contact-form-box div.form-selector input:active {
+    outline: none; }
+form .contact-form-box div.form-selector .form-selector label span {
+  color: coral; }
+form .contact-form-box div.form-selector .form-selector input {
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  outline: none;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px; }
+  form .contact-form-box div.form-selector .form-selector input:active {
+    outline: none; }
+
+@media only screen and (max-width: 600px) {
+  .columns-container {
+    padding-right: 10px;
+    padding-left: 10px; } }
+.mainContent {
+  background: transparent;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: top; }
+  .mainContent .container {
+    padding-top: 16px;
+    padding-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0; }
+    .mainContent .container .breadcrumb {
+      background: none;
+      padding: 0;
+      margin: 0;
+      padding-bottom: 17px;
+      line-height: normal; }
+      .mainContent .container .breadcrumb a {
+        text-decoration: none;
+        outline: none !important;
+        color: #666; }
+      .mainContent .container .breadcrumb span:before {
+        content: "\f105";
+        font-size: 14px;
+        display: inline-block;
+        text-align: right;
+        width: 6px;
+        color: #666;
+        font-family: "FontAwesome";
+        padding: 0 15px; }
+    .mainContent .container .row .center_column #product .primary-box .left-column .product-image .product-full {
+      border: 1px solid #eaeaea;
+      padding: 10px;
+      text-align: center; }
+      .mainContent .container .row .center_column #product .primary-box .left-column .product-image .product-full img#product-zoom {
+        vertical-align: top;
+        max-width: 100%; }
+    .mainContent .container .row .center_column #product .primary-box .left-column .product-image .product-img-thumb {
+      margin-top: 15px;
+      padding: 0 40px; }
+    .mainContent .container .row .center_column #product .primary-box .right-column {
+      position: relative;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+      float: left; }
+      .mainContent .container .row .center_column #product .primary-box .right-column h1.product-name {
+        font-size: 24px; }
+      .mainContent .container .row .center_column #product .primary-box .right-column .product-price-group span.price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #ff3366;
+        display: inline-block;
+        margin-right: 15px; }
+      .mainContent .container .row .center_column #product .primary-box .right-column .product-price-group span.old-price {
+        text-decoration: line-through;
+        display: inline-block;
+        margin-right: 15px; }
+      .mainContent .container .row .center_column #product .primary-box .right-column .info-orther {
+        padding-bottom: 5px;
+        line-height: 30px; }
+      .mainContent .container .row .center_column #product .primary-box .right-column .product-desc {
+        border-top: 1px solid #eaeaea;
+        padding: 10px 0;
+        line-height: 24px; }
+      .mainContent .container .row .center_column #product .primary-box .right-column div.form-action {
+        padding: 0;
+        padding-bottom: 5px;
+        border-top: 1px solid #eaeaea; }
+        .mainContent .container .row .center_column #product .primary-box .right-column div.form-action div.button-group {
+          margin-top: 15px;
+          overflow: hidden; }
+          .mainContent .container .row .center_column #product .primary-box .right-column div.form-action div.button-group a.btn-add-cart {
+            height: 35px;
+            width: auto;
+            cursor: pointer;
+            line-height: 35px;
+            font-size: 14px;
+            color: #fff;
+            display: inline-block;
+            margin: 0px auto;
+            text-align: center;
+            clear: both;
+            padding-left: 15px;
+            padding-right: 15px;
+            background: #F36;
+            border: 1px solid #F36; }
+            .mainContent .container .row .center_column #product .primary-box .right-column div.form-action div.button-group a.btn-add-cart:before {
+              width: 16px;
+              height: 100%;
+              float: left;
+              background: url(../images/cart.png) no-repeat scroll left center;
+              content: " ";
+              margin-right: 15px; }
+            .mainContent .container .row .center_column #product .primary-box .right-column div.form-action div.button-group a.btn-add-cart:hover {
+              transition: all ease 0.2s;
+              background-color: #ef6688;
+              text-decoration: none; }
+          .mainContent .container .row .center_column #product .primary-box .right-column div.form-action div.button-group a.btn-call {
+            padding: 0 15px;
+            background-color: #4cae4c;
+            height: 35px;
+            width: auto;
+            line-height: 35px;
+            font-size: 14px;
+            color: #FFFFFF;
+            display: inline-block;
+            margin: 0 auto;
+            text-align: center;
+            clear: both;
+            transition: .5s all;
+            border: 1px solid #4cae4c; }
+            .mainContent .container .row .center_column #product .primary-box .right-column div.form-action div.button-group a.btn-call:before {
+              content: '\f095';
+              font-family: "FontAwesome";
+              width: 20px;
+              height: 16px;
+              display: inline-block;
+              margin-right: 5px; }
+            .mainContent .container .row .center_column #product .primary-box .right-column div.form-action div.button-group a.btn-call:hover {
+              transition: all ease 0.2s;
+              background-color: white;
+              color: #4cae4c;
+              text-decoration: none; }
+    .mainContent .container .row .center_column #product .product-box {
+      margin-top: 50px; }
+      .mainContent .container .row .center_column #product .product-box h3.heading {
+        font-size: 16px;
+        color: #333333;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 17px; }
+      .mainContent .container .row .center_column #product .product-box ul.product-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        vertical-align: top; }
+        .mainContent .container .row .center_column #product .product-box ul.product-list li {
+          width: 25%;
+          float: left;
+          margin-bottom: 1px;
+          padding: 0;
+          border-right: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          list-style: none;
+          padding-bottom: 3px;
+          min-height: 286px; }
+          .mainContent .container .row .center_column #product .product-box ul.product-list li:hover .left-block .imgg {
+            transform: scale(1.2) translate(-20px, 30px); }
+          .mainContent .container .row .center_column #product .product-box ul.product-list li:hover .add-to-cart {
+            top: 205px !important; }
+          .mainContent .container .row .center_column #product .product-box ul.product-list li .right-block {
+            padding: 0 15px;
+            margin-top: 15px; }
+            .mainContent .container .row .center_column #product .product-box ul.product-list li .right-block h5.product-name {
+              padding-bottom: 5px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              line-height: 2;
+              max-height: 55px;
+              min-height: 55px;
+              font-size: 14px; }
+              .mainContent .container .row .center_column #product .product-box ul.product-list li .right-block h5.product-name a {
+                color: #666;
+                text-decoration: none;
+                outline: none !important; }
+            .mainContent .container .row .center_column #product .product-box ul.product-list li .right-block div.content_price {
+              background: transparent;
+              font-weight: inherit;
+              margin: 0;
+              padding: 0;
+              border: 0;
+              outline: 0;
+              vertical-align: top; }
+              .mainContent .container .row .center_column #product .product-box ul.product-list li .right-block div.content_price span.product-price {
+                font-size: 18px;
+                color: #f96d10; }
+          .mainContent .container .row .center_column #product .product-box ul.product-list li .left-block {
+            position: relative;
+            overflow: hidden;
+            padding: 10px 10px 0; }
+            .mainContent .container .row .center_column #product .product-box ul.product-list li .left-block a {
+              height: 250px;
+              display: block;
+              overflow: hidden;
+              color: #666;
+              text-decoration: none;
+              outline: none !important;
+              transition: all 0.3s linear; }
+              .mainContent .container .row .center_column #product .product-box ul.product-list li .left-block a img {
+                width: auto;
+                height: 100%;
+                display: block;
+                transition: all 0.5s;
+                transform: scale(1, 1);
+                margin: 0 auto; }
+            .mainContent .container .row .center_column #product .product-box ul.product-list li .left-block div.add-to-cart {
+              position: absolute;
+              left: 0;
+              top: 262px;
+              transition: 0.3s all ease;
+              right: 0;
+              bottom: -50px;
+              width: 100%;
+              background-color: rgba(0, 144, 201, 0.7);
+              background: rgba(0, 144, 201, 0.7);
+              color: #fff;
+              text-align: center;
+              line-height: 50px; }
+              .mainContent .container .row .center_column #product .product-box ul.product-list li .left-block div.add-to-cart a {
+                background: url("http://rrshop.az/assets/images/icon-cart-option2.png") no-repeat left center;
+                height: 32px;
+                line-height: 32px;
+                color: #fff;
+                width: auto;
+                padding-left: 40px;
+                display: inline-block;
+                vertical-align: middle;
+                overflow: hidden;
+                text-decoration: none;
+                outline: none !important; }
+
+div.modal .modal-dialog .modal-content .modal-header {
+  background: #f96d10;
+  color: white; }
+  div.modal .modal-dialog .modal-content .modal-header button.close {
+    color: white; }
+div.modal .modal-dialog .modal-content .modal-body span.blue {
+  color: #F44336;
+  font-size: 16px;
+  font-weight: bold; }
+div.modal .modal-dialog .modal-content .modal-body form table {
+  margin: 10px 0px;
+  max-width: 500px;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal; }
+  div.modal .modal-dialog .modal-content .modal-body form table tbody tr td {
+    padding: 8px; }
+    div.modal .modal-dialog .modal-content .modal-body form table tbody tr td input {
+      width: 100%;
+      padding: 5px !important;
+      height: 35px;
+      font-size: 1em;
+      font-family: Arial, sans-serif;
+      border: 1px solid #868686;
+      color: #1f1f1f;
+      border-radius: 3px;
+      display: inline-block; }
+    div.modal .modal-dialog .modal-content .modal-body form table tbody tr td select {
+      padding: 5px !important;
+      height: 35px;
+      font-size: 1em;
+      font-family: Arial, sans-serif;
+      border: 1px solid #868686;
+      color: #1f1f1f;
+      border-radius: 3px;
+      display: inline-block;
+      width: 70px; }
+      div.modal .modal-dialog .modal-content .modal-body form table tbody tr td select option {
+        font-weight: normal;
+        display: block;
+        white-space: pre;
+        min-height: 1.2em;
+        padding: 0px 2px 1px; }
+
+@media only screen and (max-width: 600px) {
+  li.col-sm-3 {
+    width: 100% !important; }
+
+  .mainContent {
+    padding-right: 10px;
+    padding-left: 10px; } }
 body {
   font-family: 'Arial', sans-serif;
   font-size: 14px; }
@@ -371,5 +797,146 @@ body {
           body #top-Content .container .row .col-xs-12 .latest-deals-product ul.myCarousel li.item .right-block div.content_price span.product-price {
             font-size: 18px;
             color: #f96d10; }
+  body #body-Content {
+    background: #fff;
+    margin-top: 30px;
+    padding-bottom: 30px; }
+    body #body-Content .container .categoryFeatured {
+      margin-top: 30px;
+      margin-bottom: 0;
+      border: none;
+      border-radius: 3px; }
+      body #body-Content .container .categoryFeatured nav.brandWrap {
+        position: relative;
+        min-height: 50px; }
+        body #body-Content .container .categoryFeatured nav.brandWrap .container div.navbar-brand {
+          background: #0090c9;
+          width: 165px;
+          font-size: 22px;
+          font-weight: normal;
+          padding-left: 10px; }
+          body #body-Content .container .categoryFeatured nav.brandWrap .container div.navbar-brand a {
+            color: #fff;
+            line-height: 53px;
+            text-decoration: none;
+            outline: none !important; }
+            body #body-Content .container .categoryFeatured nav.brandWrap .container div.navbar-brand a:after {
+              content: '';
+              width: 19px;
+              height: 20px;
+              position: absolute;
+              color: #fff;
+              font-weight: normal;
+              background: url("http://rrshop.az/assets/images/icon-angle-right.png") no-repeat right center;
+              top: 50%;
+              transform: translateY(-50%); }
+    body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li {
+      margin-top: 20px;
+      padding: 0;
+      border-right: 1px solid #eaeaea;
+      border-top: 1px solid #eaeaea;
+      list-style: none;
+      padding-bottom: 3px;
+      min-height: 286px; }
+      body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li:hover .left-block .imgg {
+        transform: scale(1.2) translate(-20px, 30px); }
+      body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li:hover .add-to-cart {
+        top: 205px !important; }
+      body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li .right-block {
+        padding: 0 15px;
+        margin-top: 15px; }
+        body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li .right-block h5.product-name {
+          padding-bottom: 5px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-height: 2;
+          max-height: 55px;
+          min-height: 55px;
+          font-size: 14px; }
+          body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li .right-block h5.product-name a {
+            color: #666;
+            text-decoration: none;
+            outline: none !important; }
+        body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li .right-block div.content_price {
+          background: transparent;
+          font-weight: inherit;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          outline: 0;
+          vertical-align: top; }
+          body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li .right-block div.content_price span.product-price {
+            font-size: 18px;
+            color: #f96d10; }
+      body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li .left-block {
+        position: relative;
+        overflow: hidden;
+        padding: 10px 10px 0; }
+        body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li .left-block a {
+          height: 250px;
+          display: block;
+          overflow: hidden;
+          color: #666;
+          text-decoration: none;
+          outline: none !important;
+          transition: all 0.3s linear; }
+          body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li .left-block a img {
+            width: auto;
+            height: 100%;
+            display: block;
+            transition: all 0.5s;
+            transform: scale(1, 1);
+            margin: 0 auto; }
+        body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li .left-block div.add-to-cart {
+          position: absolute;
+          left: 0;
+          top: 262px;
+          transition: 0.3s all ease;
+          right: 0;
+          bottom: -50px;
+          width: 100%;
+          background-color: rgba(0, 144, 201, 0.7);
+          background: rgba(0, 144, 201, 0.7);
+          color: #fff;
+          text-align: center;
+          line-height: 50px; }
+          body #body-Content .container .productFeatured .row .wrapProduct ul.product-list li .left-block div.add-to-cart a {
+            background: url("http://rrshop.az/assets/images/icon-cart-option2.png") no-repeat left center;
+            height: 32px;
+            line-height: 32px;
+            color: #fff;
+            width: auto;
+            padding-left: 40px;
+            display: inline-block;
+            vertical-align: middle;
+            overflow: hidden;
+            text-decoration: none;
+            outline: none !important; }
+  body .scroll_top {
+    width: 34px;
+    height: 34px;
+    position: fixed;
+    display: none;
+    font-size: 0;
+    z-index: 9999;
+    right: 10px;
+    bottom: 45px;
+    background: #666; }
+    body .scroll_top:hover {
+      transition: all ease 0.1s;
+      background: #f96d10; }
+    body .scroll_top:before {
+      content: "\f106";
+      font-family: "FontAwesome";
+      font-size: 14px;
+      color: #fff;
+      text-align: center;
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      display: block; }
 
 /*# sourceMappingURL=custom.css.map */
