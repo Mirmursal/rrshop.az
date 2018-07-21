@@ -207,8 +207,12 @@
                     background: #e80000; }
                     #header #nav-top-menu .container .row #main-menu .navbar-default .container-fluid .navbar .navbar-nav li:hover .dropdown-menu {
                       animation-name: dropdownAnimation;
-                      animation-duration: 0.8s;
+                      animation-duration: 0.4s;
                       display: block; }
+                    /*myedit begin*/
+                         .navbar-expand-lg .navbar-nav .dropdown-menu{min-width:160px;margin-top:0px!important;}
+                         .navbar-expand-lg .navbar-nav .dropdown-menu a{line-height:32px;font-size:14px;}
+                     /*myedit end*/
                   #header #nav-top-menu .container .row #main-menu .navbar-default .container-fluid .navbar .navbar-nav li .dropdown-toggle {
                     color: white;
                     position: relative; }
