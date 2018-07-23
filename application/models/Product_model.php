@@ -113,4 +113,30 @@ SQL;
     {
         return $this->db->insert("orders" ,$data );
     }
+
+    /** This function sort product by sub_category (by marka)*/
+    public function get_products_by_marka($id)
+    {
+        $sql =<<<SQL
+SELECT DISTINCT 
+product.id as 'id' ,
+product.barcode,
+ product.name as 'name', 
+ product_img.img_name as 'img',
+  product.active_price,
+  product.old_price ,
+  sub_category.name as 'marka_name'
+     FROM `product` 
+     INNER join sub_category 
+     on sub_category.id = product.sub_cat_id 
+     inner join product_img
+      on product_img.product_id = product.id
+       where product.sub_cat_id = $id
+SQL;
+
+        $smartphones = $this->db->query($sql) ;
+        return $smartphones->result();
+    }
+
+
 }

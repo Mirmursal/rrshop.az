@@ -83,7 +83,7 @@
                                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                                     <?php foreach($sub_categories as $sub_category){; ?>
                                                         <?php if($sub_category->main_cat_id == $category->id){?>
-                                                            <a data-subCatId = "<?php echo $sub_category->id;?>" class="dropdown-item" href="#"><?php echo $sub_category->name;?></a>
+                                                            <a data-subCatId = "<?php echo $sub_category->id;?>" class="dropdown-item" href="<?php echo base_url("home/catFilter/$sub_category->id");?>"><?php echo $sub_category->name;?></a>
                                                       <?php  } ;?>
                                                     <?php } ;?>
                                                 </div>

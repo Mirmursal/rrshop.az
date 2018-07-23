@@ -66,7 +66,17 @@ class Home extends CI_Controller{
     /**Navbar da gosterilen kategoriyalar uzre filter eden ve neticeni view -da qaytaran action*/
     public function catFilter(){
 
-        echo "Navbar da gosterilen kategoriyalar uzre filter eden ve neticeni view -da qaytaran action olacag";
+        $data['categories'] = $this->Category_model->get_categories();
+
+        $data['sub_categories'] = $this->Category_model->get_sub_categories();
+
+        $id = $this->uri->segment(3);
+
+        $data['product_by_cat'] = $this->Product_model->get_products_by_marka($id);
+
+        $data['about_our_company'] = $this->Setting_model->get_about_our_company();
+
+        $this->load->view("category",$data);
 
     }
 
