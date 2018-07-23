@@ -47,111 +47,47 @@
         <div class="container">
             <div class="row">
 
-                <!-- edit -->
-                <div class="col-xs-12 col-sm-12">
-                    <h2 class="page-heading">
-                        <span class="page-heading-title">Çox satılanlar</span>
-                    </h2>
-                    <div class="latest-deals-product">
-                        <!-- owl begin -->
-                        <ul class="owl-carousel myCarousel">
-                            <!-- edit -->
-                            <li class="item">
-                                <div class="left-block">
-                                    <a class="imgg" href="pages/product.html" title="Xiaomi MI A1 4GB/64GB Dual SIM Gold">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product1.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="İndi sifariş et" href="pages/product.html">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi MI A1 4GB/64GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">380 Azn</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- edit -->
-                            <li class="item">
-                                <div class="left-block">
-                                    <a class="imgg" href="#" title="Xiaomi MI A1 4GB/64GB Dual SIM Gold">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product5.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="İndi sifariş et" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi MI A1 4GB/64GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">380 Azn</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="left-block">
-                                    <a class="imgg" href="#" title="Xiaomi MI A1 4GB/64GB Dual SIM Gold">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product2.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="İndi sifariş et" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi MI A1 4GB/64GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">380 Azn</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="left-block">
-                                    <a class="imgg" href="#" title="Xiaomi MI A1 4GB/64GB Dual SIM Gold">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product3.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="İndi sifariş et" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi MI A1 4GB/64GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">380 Azn</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="left-block">
-                                    <a class="imgg" href="#" title="Xiaomi MI A1 4GB/64GB Dual SIM Gold">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product4.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="İndi sifariş et" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi MI A1 4GB/64GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">380 Azn</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <!-- owl end -->
+                <?php
+                if(count($get_best_seller) == 0 )
+                {;?>
+                    <h1>Eger hele satish sayi yoxdursa burada istediyiniz bildirishi cixara bilersiniz</h1>
+               <?php }
+                else{ ;?>
+                    <!-- edit -->
+                    <div class="col-xs-12 col-sm-12">
+                        <h2 class="page-heading">
+                            <span class="page-heading-title">Çox satılanlar</span>
+                        </h2>
+                        <div class="latest-deals-product">
+                            <!-- owl begin -->
+                            <ul class="owl-carousel myCarousel">
+                                <?php foreach($get_best_seller as $best_sell_product){ ;?>
+                                    <li class="item">
+                                        <div class="left-block">
+                                            <a class="imgg" href="<?php echo base_url("product/index/$best_sell_product->id");?>" title="<?php echo $best_sell_product->name;?>">
+                                                <img class="img-responsive" alt="product" src="assets/images/bestSeller/<?php echo $best_sell_product->img;?>">
+                                            </a>
+                                            <div class="add-to-cart">
+                                                <a title="İndi sifariş et" href="<?php echo base_url("product/index/$best_sell_product->id");?>">İndi sifariş et</a>
+                                            </div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name">
+                                                <a href="#"><?php echo $best_sell_product->name;?></a>
+                                            </h5>
+                                            <div class="content_price">
+                                                <span class="price product-price"><?php echo $best_sell_product->price;?></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php } ;?>
+
+                            </ul>
+                            <!-- owl end -->
+                        </div>
                     </div>
-                </div>
-                <!-- edit -->
+                    <!-- edit -->
+                <?php };?>
             </div>
         </div>
     </div>
@@ -179,150 +115,26 @@
                 <div class="row">
                     <div class="wrapProduct">
                         <ul class="product-list row">
-                            <li class="col-sm-3">
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi Redmi 5 3GB/32GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">269 Azn</span>
-                                    </div>
-                                </div>
-                                <div class="left-block">
-                                    <a class="imgg" href="/xiaomi-redmi-5-3gb-32gb-dual-sim-gold-142.html">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product1.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi Redmi 5 3GB/32GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">269 Azn</span>
-                                    </div>
-                                </div>
-                                <div class="left-block">
-                                    <a class="imgg" href="/xiaomi-redmi-5-3gb-32gb-dual-sim-gold-142.html">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product1.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi Redmi 5 3GB/32GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">269 Azn</span>
-                                    </div>
-                                </div>
-                                <div class="left-block">
-                                    <a class="imgg" href="/xiaomi-redmi-5-3gb-32gb-dual-sim-gold-142.html">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product1.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi Redmi 5 3GB/32GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">269 Azn</span>
-                                    </div>
-                                </div>
-                                <div class="left-block">
-                                    <a class="imgg" href="/xiaomi-redmi-5-3gb-32gb-dual-sim-gold-142.html">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product3.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi Redmi 5 3GB/32GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">269 Azn</span>
-                                    </div>
-                                </div>
-                                <div class="left-block">
-                                    <a class="imgg" href="/xiaomi-redmi-5-3gb-32gb-dual-sim-gold-142.html">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product5.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi Redmi 5 3GB/32GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">269 Azn</span>
-                                    </div>
-                                </div>
-                                <div class="left-block">
-                                    <a class="imgg" href="/xiaomi-redmi-5-3gb-32gb-dual-sim-gold-142.html">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product2.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi Redmi 5 3GB/32GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">269 Azn</span>
-                                    </div>
-                                </div>
-                                <div class="left-block">
-                                    <a class="imgg" href="/xiaomi-redmi-5-3gb-32gb-dual-sim-gold-142.html">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product3.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="right-block">
-                                    <h5 class="product-name">
-                                        <a href="#">Xiaomi Redmi 5 3GB/32GB Dual SIM Gold</a>
-                                    </h5>
-                                    <div class="content_price">
-                                        <span class="price product-price">269 Azn</span>
-                                    </div>
-                                </div>
-                                <div class="left-block">
-                                    <a class="imgg" href="/xiaomi-redmi-5-3gb-32gb-dual-sim-gold-142.html">
-                                        <img class="img-responsive" alt="product" src="assets/images/bestSeller/product4.jpg">
-                                    </a>
-                                    <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                    </div>
-                                </div>
-                            </li>
+                          <?php foreach($smartphones as $item){;?>
+                              <li class="col-sm-3">
+                                  <div class="right-block">
+                                      <h5 class="product-name">
+                                          <a href="<?php echo base_url("product/index/$item->id");?>"><?php echo $item->name;?></a>
+                                      </h5>
+                                      <div class="content_price">
+                                          <span class="price product-price"><?php echo $item->active_price;?></span>
+                                      </div>
+                                  </div>
+                                  <div class="left-block">
+                                      <a class="imgg" href="<?php echo base_url("product/index/$item->id");?>">
+                                          <img class="img-responsive" alt="product" src="assets/images/bestSeller/<?php echo $item->img;?>">
+                                      </a>
+                                      <div class="add-to-cart">
+                                          <a title="Add to Cart" href="<?php echo base_url("product/index/$item->id");?>">İndi sifariş et</a>
+                                      </div>
+                                  </div>
+                              </li>
+                            <?php } ;?>
                         </ul>
                     </div>
                 </div>

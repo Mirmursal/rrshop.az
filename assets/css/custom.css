@@ -212,7 +212,9 @@
                     /*myedit begin*/
                          .navbar-expand-lg .navbar-nav .dropdown-menu{min-width:160px;margin-top:0px!important;}
                          .navbar-expand-lg .navbar-nav .dropdown-menu a{line-height:32px;font-size:14px;}
-                     /*myedit end*/
+#top-Content .container .row .col-xs-12 .latest-deals-product ul.myCarousel li.item .left-block div.add-to-cart a{margin-top:11px;}
+#body-Content .container .productFeatured .row .wrapProduct ul.product-list li .left-block div.add-to-cart a{margin-top:11px;}
+  /*myedit end*/
                   #header #nav-top-menu .container .row #main-menu .navbar-default .container-fluid .navbar .navbar-nav li .dropdown-toggle {
                     color: white;
                     position: relative; }

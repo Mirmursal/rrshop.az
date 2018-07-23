@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +29,7 @@
                 <span class="navigation-pipe">&nbsp;</span>
                 <a href="/smartfonlar-c44" title="Smartfonlar">Smartfonlar</a>
                 <span class="navigation-pipe">&nbsp;</span>
-                <a href="/xiaomi-s133" title="Xiaomi">Xiaomi</a>
+                <a href="/xiaomi-s133" title="<?php echo $product[0]->name; ?>"><?php echo $product[0]->name; ?></a>
             </div>
             <!-- row -->
             <div class="row">
@@ -37,203 +38,77 @@
                 <div class="center_column col-xs-12 col-sm-12">
                     <!-- Product -->
                     <div id="product">
-                        <div class="primary-box row">
-                            <div class="left-column col-xs-12 col-sm-5">
-                                <!-- product-imge-->
-                                <div class="product-image">
-                                    <div class="product-full">
-                                        <img id="product-zoom" src="../assets/images/uploads/15287850319074438845b1f688795654.jpg" data-zoom-image="uploads/news/15287850319074438845b1f688795654.jpg">
+                            <div class="primary-box row">
+                                <div class="left-column col-xs-12 col-sm-5">
+                                    <!-- product-imge-->
+                                    <div class="product-image">
+                                        <div class="product-full">
+                                            <img style="width: 280px;height: 500px;" id="product-zoom" src="<?php echo base_url("/assets/images/bestSeller/".$product[0]->img);?>" data-zoom-image="<?php echo base_url("/assets/images/bestSeller/".$product[0]->img);?>">
+                                        </div>
+                                        <div class="product-img-thumb">
+                                            <h4>owl carousel will be here</h4>
+                                        </div>
                                     </div>
-                                    <div class="product-img-thumb">
-                                        <h4>owl carousel will be here</h4>
+                                    <!-- product-imge-->
+                                </div>
+                                <div class="right-column col-xs-12 col-sm-7">
+                                    <h1 class="product-name"><?php echo $product[0]->name ; ?></h1>
+                                    <div class="product-price-group">
+                                        <span class="price"><?php echo round($product[0]->active_price);?> AZN</span>
+                                        <span class="old-price"><?php echo round($product[0]->old_price ); ?> AZN</span>
                                     </div>
-                                </div>
-                                <!-- product-imge-->
-                            </div>
-                            <div class="right-column col-xs-12 col-sm-7">
-                                <h1 class="product-name">Xiaomi MI MIX 2 Black</h1>
-                                <div class="product-price-group">
-                                    <span class="price">799 AZN</span>
-                                    <span class="old-price">1118 AZN</span>
-                                </div>
-                                <div class="info-orther">
-                                    <p>Məhsul kodu: 150</p>
-                                </div>
-                                <div class="product-desc">
-                                    Ekran ölçüsü (düym) 5.99
-                                    <br> Ekran imkanları 1080 x 2160
-                                    <br> Əsas kamera 12 MP (f/2.0, 1/2.9", 1.25 µm), avtofokus, 4-axis OIS, dual-LED dual-tone
-                                    flash
-                                    <br> Operativ yaddaş 6 GB
-                                    <br> Quraşdırılmış yaddaş 64 GB
-                                    <br> SIM-kart sayı 2
-                                    <br> Batareya tutumu (mAh) Li-Ion 3400 </div>
-
-                                <div class="form-action">
-                                    <div class="button-group">
-                                        <a class="btn-add-cart" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">İndi sifariş et</a>
-                                        <a class="btn-call" href="tel:0507081111">İndi zəng et</a>
+                                    <div class="info-orther">
+                                        <p>Məhsul kodu: <?php echo $product[0]->barcode ; ?></p>
                                     </div>
-                                </div>
-                                <div class="form-share">
+                                    <div class="product-desc">
+                                        <?php foreach($properties as $item){;?>
+                                         <?php echo $item->prop_key .":".$item->prop_val . "<br>" ;?>
+                                        <?php } ;?>
+                                    </div>
+                                    <div class="form-action">
+                                        <div class="button-group">
+                                            <a class="btn-add-cart" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">İndi sifariş et</a>
+                                            <a class="btn-call" href="tel:0507081111">İndi zəng et</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-share">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
                         <!-- box product -->
                         <div class="product-box">
                             <h3 class="heading">Bənzər Məhsullar</h3>
+                            <?php if(count($similar_products)== 0){;?>
+                            <div class="alert alert-warning">Bu məhsulun bənzəri yoxdur</div>
+                            <?php };?>
                             <ul class="product-list">
-                                <li class="col-sm-3 col-md-3">
-                                    <div class="right-block">
-                                        <h5 class="product-name">
-                                            <a href="#">Xiaomi Redmi Note 5A 2GB/16GB Dark Grey</a>
-                                        </h5>
-                                        <div class="content_price">
-                                            <span class="price product-price">198 Azn</span>
+                                <?php foreach($similar_products as $item){;?>
+                                    <li class="col-sm-3 col-md-3">
+                                        <div class="right-block">
+                                            <h5 class="product-name">
+                                                <a href="<?php echo base_url("product/index/$item->id");?>"><?php echo $item->name;?></a>
+                                            </h5>
+                                            <div class="content_price">
+                                                <span class="price product-price"><?php echo $item->active_price;?></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="../assets/images/bestSeller/product2.jpg">
-                                        </a>
-                                        <div class="add-to-cart">
-                                            <a title="Add to Cart" href="#">İndi sifariş et</a>
+                                        <div class="left-block">
+                                            <a href="<?php echo base_url("product/index/$item->id");?>">
+                                                <img class="img-responsive" alt="product" src="<?php echo base_url("/assets/images/bestSeller/".$item->img);?>">
+                                            </a>
+                                            <div class="add-to-cart">
+                                                <a title="Add to Cart" href="#">İndi sifariş et</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="col-sm-3 col-md-3">
-                                    <div class="right-block">
-                                        <h5 class="product-name">
-                                            <a href="#">Xiaomi Redmi Note 5A 2GB/16GB Dark Grey</a>
-                                        </h5>
-                                        <div class="content_price">
-                                            <span class="price product-price">198 Azn</span>
-                                        </div>
-                                    </div>
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="../assets/images/bestSeller/product4.jpg">
-                                        </a>
-                                        <div class="add-to-cart">
-                                            <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="col-sm-3 col-md-3">
-                                    <div class="right-block">
-                                        <h5 class="product-name">
-                                            <a href="#">Xiaomi Redmi Note 5A 2GB/16GB Dark Grey</a>
-                                        </h5>
-                                        <div class="content_price">
-                                            <span class="price product-price">198 Azn</span>
-                                        </div>
-                                    </div>
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="../assets/images/bestSeller/product5.jpg">
-                                        </a>
-                                        <div class="add-to-cart">
-                                            <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="col-sm-3 col-md-3">
-                                    <div class="right-block">
-                                        <h5 class="product-name">
-                                            <a href="#">Xiaomi Redmi Note 5A 2GB/16GB Dark Grey</a>
-                                        </h5>
-                                        <div class="content_price">
-                                            <span class="price product-price">198 Azn</span>
-                                        </div>
-                                    </div>
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="../assets/images/bestSeller/product3.jpg">
-                                        </a>
-                                        <div class="add-to-cart">
-                                            <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="col-sm-3 col-md-3">
-                                    <div class="right-block">
-                                        <h5 class="product-name">
-                                            <a href="#">Xiaomi Redmi Note 5A 2GB/16GB Dark Grey</a>
-                                        </h5>
-                                        <div class="content_price">
-                                            <span class="price product-price">198 Azn</span>
-                                        </div>
-                                    </div>
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="../assets/images/bestSeller/product5.jpg">
-                                        </a>
-                                        <div class="add-to-cart">
-                                            <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="col-sm-3 col-md-3">
-                                    <div class="right-block">
-                                        <h5 class="product-name">
-                                            <a href="#">Xiaomi Redmi Note 5A 2GB/16GB Dark Grey</a>
-                                        </h5>
-                                        <div class="content_price">
-                                            <span class="price product-price">198 Azn</span>
-                                        </div>
-                                    </div>
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="../assets/images/bestSeller/product2.jpg">
-                                        </a>
-                                        <div class="add-to-cart">
-                                            <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="col-sm-3 col-md-3">
-                                    <div class="right-block">
-                                        <h5 class="product-name">
-                                            <a href="#">Xiaomi Redmi Note 5A 2GB/16GB Dark Grey</a>
-                                        </h5>
-                                        <div class="content_price">
-                                            <span class="price product-price">198 Azn</span>
-                                        </div>
-                                    </div>
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="../assets/images/bestSeller/product1.jpg">
-                                        </a>
-                                        <div class="add-to-cart">
-                                            <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="col-sm-3 col-md-3">
-                                    <div class="right-block">
-                                        <h5 class="product-name">
-                                            <a href="#">Xiaomi Redmi Note 5A 2GB/16GB Dark Grey</a>
-                                        </h5>
-                                        <div class="content_price">
-                                            <span class="price product-price">198 Azn</span>
-                                        </div>
-                                    </div>
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="../assets/images/bestSeller/product3.jpg">
-                                        </a>
-                                        <div class="add-to-cart">
-                                            <a title="Add to Cart" href="#">İndi sifariş et</a>
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                <?php } ;?>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+<!--        here begin-->
         <!-- modal begin -->
         <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -247,27 +122,26 @@
                     </div>
                     <div class="modal-body">
                         <!-- modal body begin -->
-                        <span class="blue">Xiaomi Redmi 5 Plus 4GB/64GB Dual SIM Gold</span>
+                        <span class="blue"><?php echo $product[0]->name ; ?></span>
                         <br>
-                        <b>Cəmi:  360 Azn</b>
+                        <b>Cəmi:  <?php echo round($product[0]->active_price) ; ?>Azn</b>
                         <br>
 
 
 
-                        <form action="order_tez.php?&amp;popup=1&amp;id=149&amp;mh=70b43bf28e6470d135916834be2315f6&amp;mr=1532035789&amp;subact=add"
-                            method="post">
+                        <form action="<?php echo base_url("product/order");?>" method="post">
                             <table class="table5" style="margin: 10px 0px; max-width: 500px;">
                                 <tbody>
                                     <tr>
                                         <td>Ad və soyad:</td>
                                         <td>
-                                            <input required="" type="text" name="surname" value="" maxlength="70" class="required">
+                                            <input required="" type="text" name="fullname" value="" maxlength="70" class="required">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Telefon:</td>
                                         <td>
-                                            <select name="tel_1" style="width: 70px;">
+                                            <select name="operator" style="width: 70px;">
                                                 <option value="055">055</option>
                                                 <option value="050">050</option>
                                                 <option value="051">051</option>
@@ -275,12 +149,13 @@
                                                 <option value="077">077</option>
                                                 <option value="012">012</option>
                                             </select>
-                                            <input style="width:70%;" required="" type="number" name="tel" value="" maxlength="7" placeholder="1234567"> </td>
+                                            <input style="width:70%;" required="" type="number" name="number" value="" maxlength="7" placeholder="1234567"> </td>
+                                        <input type="hidden" name="product_id" value="<?php echo $product[0]->id ; ?>">
                                     </tr>
                                     <tr>
                                         <td>Ünvan:</td>
                                         <td>
-                                            <input required="" type="text" name="unvan" value="" maxlength="70" class="required"> </td>
+                                            <input required="" type="text" name="address" value="" maxlength="70" class="required"> </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2018 at 01:17 AM
+-- Generation Time: Jul 23, 2018 at 04:15 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -44,32 +44,6 @@ CREATE TABLE `about` (
 
 INSERT INTO `about` (`id`, `description`, `address`, `contact_number`, `email`, `facebook_page_link`, `instagram_page_link`) VALUES
 (1, 'RRShop mağazası sizə geniş çeşiddə mobil telefon və smartfonlar təqdim edir. Mağazamizda siz müxtəlif markalı telefonlarla və planşetlərlə tanış ola bilərsiniz, burada sizə ucuz qiymətə telefonlar və planşetlər də təqdim olunur. Mobil telefon bazarında artıq oturuşmuş Apple, Samsung, HTC, Fly, Huawei, Zopo, ZTE kimi markaların funksional mobil telefonlarını digər markalara nisbətən daha ucuz qiymətlə əldə etmiş olursunuz. Sizə təqdim etdiyimiz ucuz telefon qiymətləri büdcənizə qənaət etmənizə yardımçı olacaq və əlavə xərclərdən azad edəcək. Kataloqumuzda qiymətə ucuzdan bahaya doğru filter verməklə 2 GB, 3 GB, 4 GB, 6 GB ram, 16GB, 32 GB, 64 GB, 128 GB, 256 GB daxili yaddaş ilə təchiz olunmuş ucuz qiymətli telefonları zövqünüzə görə seçə bilərsiniz.', 'Baku, Azerbaycan.', ' (050) 708 11 11', 'support@rrshop.az', 'https://www.facebook.com/rrshopaz', 'https://www.instagram.com/rrshop.az/');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `customer`
---
-
-CREATE TABLE `customer` (
-  `id` int(11) NOT NULL,
-  `full_name` varchar(70) NOT NULL,
-  `contact_number` varchar(50) NOT NULL,
-  `address` varchar(125) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `customer`
---
-
-INSERT INTO `customer` (`id`, `full_name`, `contact_number`, `address`, `status`) VALUES
-(1, 'Mirmursal Mursalov', '+994 55 269 15 25', 'Baku Bina', 1),
-(2, 'MIrhasan', '+994 55 212 22 12', 'Baku Amircan', 1),
-(3, 'Amrah Huseynov', '+994 55 555 55 55', 'Baku Akhmadli', 1),
-(4, 'Bashir Azizov', '+994 55 234 34 34', 'Xizi Dagli district', 1),
-(5, 'Samir Beydullayev', '+994 55 555 55 55', 'Goychay', 1),
-(6, 'Rufat Aliyev', '+994 554 54 55', 'Baku Sahil', 1);
 
 -- --------------------------------------------------------
 
@@ -125,22 +99,23 @@ INSERT INTO `main_slider` (`id`, `img_name`, `status`) VALUES
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `product_id` int(11) DEFAULT NULL,
-  `customer_id` int(11) DEFAULT NULL,
   `isCompleted` tinyint(1) NOT NULL DEFAULT '0',
-  `status` tinyint(1) NOT NULL DEFAULT '1'
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `customer_fullname` varchar(50) NOT NULL,
+  `customer_number` varchar(50) NOT NULL,
+  `customer_address` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `product_id`, `customer_id`, `isCompleted`, `status`) VALUES
-(1, 4, 1, 1, 1),
-(2, 3, 2, 0, 1),
-(3, 4, 4, 0, 1),
-(4, 3, 3, 0, 1),
-(5, 4, 6, 1, 1),
-(6, 4, 5, 0, 1);
+INSERT INTO `orders` (`id`, `product_id`, `isCompleted`, `status`, `customer_fullname`, `customer_number`, `customer_address`) VALUES
+(1, 4, 1, 1, 'Mirmursal Mursalov', '055 269 15 25', 'Baku Bina'),
+(2, 3, 0, 1, 'Bashir Azizov', '050 223 32 32', 'Khizi Dagli'),
+(3, 4, 0, 1, 'Samir Karimov', '055 232 33 22', 'Baku Khirdalan'),
+(4, 3, 0, 1, 'Yolcu Nasib', '055 323 32 32', 'Baku Akhmadli'),
+(6, 4, 0, 1, 'Amrah Huseynov', '055 333 44 55', 'Ordubad Cahri');
 
 -- --------------------------------------------------------
 
@@ -166,9 +141,11 @@ INSERT INTO `product` (`id`, `name`, `barcode`, `active_price`, `old_price`, `su
 (1, 'Samsung J5 (2018) ', '025', '532.00', '650.00', 3, 1),
 (2, 'Samsung Grand Prime 2018', '011', '450.00', '523.00', 3, 1),
 (3, 'Samsung Galaxu S8+', '234', '1345.00', '1678.00', 3, 1),
-(4, 'Iphone 7S+ 64GB', '122', '799.00', '850.00', 2, 1),
+(4, 'Iphone 7S+ 32GB', '122', '799.00', '850.00', 2, 1),
 (5, 'Xiomi Mi-8', '133', '465.00', '655.00', 1, 1),
-(6, 'Xiaomi MI A1 4GB/64GB Dual SIM Gold', '543', '555.00', '676.00', 1, 1);
+(6, 'Xiaomi MI A1 4GB/64GB Dual SIM Gold', '543', '555.00', '676.00', 1, 1),
+(7, 'Samsung Galaxy J2 (2018)', '112', '222.00', '333.00', 3, 1),
+(8, 'LG S900 64GB ', '313', '678.00', '876.00', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -214,40 +191,40 @@ CREATE TABLE `product_properties` (
 --
 
 INSERT INTO `product_properties` (`id`, `prop_key`, `prop_val`, `product_id`, `status`) VALUES
-(1, 'screen_size', '5.99', 5, 1),
-(2, 'display_possibilities', '1080 x 2160', 5, 1),
-(4, 'ram', '6 GB', 5, 1),
+(1, 'Ekran ölçüsü(düym)', '700', 5, 1),
+(2, 'Ekran imkanları', '1080 x 2160', 5, 1),
+(4, 'Operativ yaddaş', '6 GB', 5, 1),
 (5, 'camera', '12 MP (f/2.0, 1/2.9\", 1.25 µm), avtofokus, 4-axis ', 5, 1),
-(7, 'battery', '(mAh) Li-Ion 3400', 5, 1),
-(8, 'sim_card_count', '2', 5, 1),
-(9, 'screen_size', '5.99', 1, 1),
-(10, 'ram', '6 GB', 1, 1),
-(11, 'camera', '12 MP (f/2.0, 1/2.9\", 1.25 µm), avtofokus, 4-axis ', 1, 1),
-(12, 'battery', '(mAh) Li-Ion 3400', 1, 1),
-(13, 'sim_card_count', '2', 1, 1),
-(14, 'screen_size', '5.99', 2, 1),
-(15, 'display_possibilities', '1080 x 2160', 2, 1),
-(16, 'ram', '6 GB', 2, 1),
-(17, 'camera', '12 MP (f/2.0, 1/2.9\", 1.25 µm), avtofokus, 4-axis ', 2, 1),
-(18, 'battery', '(mAh) Li-Ion 3400', 2, 1),
-(19, 'sim_card_count', '2', 2, 1),
-(20, 'screen_size', '5.99', 3, 1),
-(21, 'ram', '6 GB', 3, 1),
-(22, 'camera', '12 MP (f/2.0, 1/2.9\", 1.25 µm), avtofokus, 4-axis ', 3, 1),
-(23, 'battery', '(mAh) Li-Ion 3400', 3, 1),
-(24, 'sim_card_count', '2', 3, 1),
-(25, 'screen_size', '5.99', 4, 1),
-(26, 'display_possibilities', '1080 x 2160', 4, 1),
-(27, 'ram', '6 GB', 4, 1),
-(28, 'camera', '12 MP (f/2.0, 1/2.9\", 1.25 µm), avtofokus, 4-axis ', 4, 1),
-(29, 'battery', '(mAh) Li-Ion 3400', 4, 1),
-(30, 'sim_card_count', '2', 4, 1),
-(31, 'screen_size', '5.99', 6, 1),
-(32, 'display_possibilities', '1080 x 2160', 6, 1),
-(33, 'ram', '6 GB', 6, 1),
-(34, 'camera', '12 MP (f/2.0, 1/2.9\", 1.25 µm), avtofokus, 4-axis ', 6, 1),
-(35, 'battery', '(mAh) Li-Ion 3400', 6, 1),
-(36, 'sim_card_count', '2', 6, 1);
+(7, 'Batareya tutumu ', '(mAh) Li-Ion 3400', 5, 1),
+(8, 'SIM-kart sayı', '2', 5, 1),
+(9, 'Ekran ölçüsü(düym)', '5.99', 1, 1),
+(10, 'Operativ yaddaş', '6 GB', 1, 1),
+(11, 'Əsas kamera ', '12 MP (f/2.0, 1/2.9\", 1.25 µm), avtofokus, 4-axis ', 1, 1),
+(12, 'Batareya tutumu ', '(mAh) Li-Ion 3400', 1, 1),
+(13, 'SIM-kart sayı', '2', 1, 1),
+(14, 'Ekran ölçüsü(düym)', '5.99', 2, 1),
+(15, 'Ekran imkanları', '1080 x 2160', 2, 1),
+(16, 'Operativ yaddaş', '6 GB', 2, 1),
+(17, 'Əsas kamera ', '12 MP (f/2.0, 1/2.9\", 1.25 µm), avtofokus, 4-axis ', 2, 1),
+(18, 'Batareya tutumu ', '(mAh) Li-Ion 3400', 2, 1),
+(19, 'SIM-kart sayı', '2', 2, 1),
+(20, 'Ekran ölçüsü(düym) ', '5.99', 3, 1),
+(21, 'Operativ yaddaş', '6 GB', 3, 1),
+(22, 'Əsas kamera ', '12 MP (f/2.0, 1/2.9\", 1.25 µm), avtofokus, 4-axis ', 3, 1),
+(23, 'Batareya tutumu ', '(mAh) Li-Ion 3400', 3, 1),
+(24, 'SIM-kart sayı', '2', 3, 1),
+(25, 'Ekran ölçüsü(düym)', '7.77', 4, 1),
+(26, 'Ekran imkanları', '1080 x 2160', 4, 1),
+(27, 'Operativ yaddaş', '6 GB', 4, 1),
+(28, 'Əsas kamera ', '12 MP (f/2.0, 1/2.9\", 1.25 µm), avtofokus, 4-axis ', 4, 1),
+(29, 'Batareya tutumu ', '(mAh) Li-Ion 3400', 4, 1),
+(30, 'SIM-kart sayı', '2', 4, 1),
+(31, 'Ekran ölçüsü(düym)', '5.99', 6, 1),
+(32, 'Ekran imkanları ', '1080 x 2160', 6, 1),
+(33, 'Operativ yaddaş', '12 GB', 6, 1),
+(34, 'Əsas kamera ', '12 MP (f/2.0, 1/2.9\", 1.25 µm), avtofokus, 4-axis ', 6, 1),
+(35, 'Batareya tutumu ', '(mAh) Li-Ion 3400', 6, 1),
+(36, 'SIM-kart sayı', '2', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -309,12 +286,6 @@ ALTER TABLE `about`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `customer`
---
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `main_category`
 --
 ALTER TABLE `main_category`
@@ -331,8 +302,7 @@ ALTER TABLE `main_slider`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `customer_id` (`customer_id`);
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `product`
@@ -373,12 +343,6 @@ ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `customer`
---
-ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT for table `main_category`
 --
 ALTER TABLE `main_category`
@@ -394,13 +358,13 @@ ALTER TABLE `main_slider`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `product_img`
@@ -428,8 +392,7 @@ ALTER TABLE `sub_category`
 -- Constraints for table `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `product`

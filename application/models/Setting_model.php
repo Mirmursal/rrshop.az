@@ -1,4 +1,4 @@
-<!--//Saytin butun settingsi bu model uzerinden olacag-->
+<!--/**Saytin butun settingsi bu model uzerinden olacag*/-->
 
 <?php
 

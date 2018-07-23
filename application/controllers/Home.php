@@ -8,24 +8,45 @@ class Home extends CI_Controller{
         parent::__construct();
         $this->load->model('Category_model');
         $this->load->model('Setting_model');
+        $this->load->model('Product_model');
     }
 
-    //index.php action
+    /**index.php action*/
     public function index()
     {
-        $data['categories'] = $this->Category_model->get_categories();
+        $categories = $this->Category_model->get_categories();
 
-        $data['sub_categories'] = $this->Category_model->get_sub_categories();
+        $sub_categories = $this->Category_model->get_sub_categories();
 
-        $data['slide_items'] = $this->Setting_model-> get_slider();
+        $slide_items = $this->Setting_model-> get_slider();
 
-        $data['about_our_company'] = $this->Setting_model->get_about_our_company();
+        $about_our_company = $this->Setting_model->get_about_our_company();
 
-        $this->load->view("index",$data);
+        $get_best_seller = $this->Product_model->get_best_sell_product();
+
+        $smartphones = $this->Product_model->get_products_by_types(1);
+
+        $viewData = array(
+
+            'categories' =>$categories,
+
+            'sub_categories'=>$sub_categories,
+
+            'slide_items'=>$slide_items,
+
+            'about_our_company' => $about_our_company,
+
+            'get_best_seller' =>$get_best_seller,
+
+            'smartphones'=>$smartphones
+
+        );
+
+        $this->load->view("index",$viewData);
 
     }
 
-    //Haqqimizda sehifesine gonderen action
+    /**Haqqimizda sehifesine gonderen action*/
     public function about(){
 
 
@@ -42,14 +63,14 @@ class Home extends CI_Controller{
 
     }
 
-    //Navbar da gosterilen kategoriyalar uzre filter eden ve neticeni view -da qaytaran action
+    /**Navbar da gosterilen kategoriyalar uzre filter eden ve neticeni view -da qaytaran action*/
     public function catFilter(){
 
         echo "Navbar da gosterilen kategoriyalar uzre filter eden ve neticeni view -da qaytaran action olacag";
 
     }
 
-     //index sehifesinde smartfon buttonu var o buttona esasen yalniz smartfonlari gosteren action
+     /**index sehifesinde smartfon buttonu var o buttona esasen yalniz smartfonlari gosteren action*/
     public function showSmartphons(){
 
         echo "index sehifesinde smartfon buttonu var o buttona esasen yalniz smartfonlari gosteren action";
